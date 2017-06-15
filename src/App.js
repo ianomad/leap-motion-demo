@@ -23,6 +23,8 @@ class App extends Component {
     var canvas = pane.getContext('2d');
 
     var frame = this.state.frame;
+    canvas.clearRect(0, 0, 400, 400);
+
     for (var i = 0; i < frame.hands.length; i++) {
       var hand = frame.hands[i];
 
@@ -30,8 +32,6 @@ class App extends Component {
       var x = 150 + coordinates[0];
       var y = coordinates[1];
       var z = coordinates[2];
-
-      canvas.clearRect(0, 0, 400, 400);
 
       canvas.fillRect(x, 150 - y, 20 + z / 10.0, 20 + z / 10.0);
     }
